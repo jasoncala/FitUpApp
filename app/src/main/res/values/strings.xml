@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">FitUpApp</string>
+    <string name="app_name">FitUp App</string>
+
+    <!--exit notification-->
+    <string name="app_fitup_press_again_exit_app">Press again to exit</string>
+    <string name="app_fitup_action_settings">Settings</string>
+    <string name="app_fitup_activity_select_friend">Select Friend</string>
+
+    <string name="app_fitup_about_text">Insert text
+    \n\nImage source :
+        \n<a href="www.pexels.com">www.pexels.com</a>
+        \n<a href="www.pixabay.com">www.pixabay.com</a>
+    </string>
+
+    <string name="app_fitup_my_name">John Miller</string>
+
+    <string name="app_fitup_tab_feed">Feeds</string>
+    <string name="app_fitup_tab_friend">Friends</string>
+    <string name="app_fitup_tab_message">Messages</string>
+    <string name="app_fitup_tab_notif">Notifications</string>
+    <string name="app_fitup_tab_profile">Profile</string>
+    <string name="app_fitup_avatar_source">http://www.designs.com/</string>
 </resources>

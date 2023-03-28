@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "712701908143",
+    "project_id": "fitup-f6cf0",
+    "storage_bucket": "fitup-f6cf0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712701908143:android:366304b851fa83424fb05a",
+        "android_client_info": {
+          "package_name": "com.uwindsor.calaj.fitupapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712701908143-cvumdbmff438ovoann0ece5dgm0k9h3k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCADWEH_HW_teYsxm871Q-f6KvtyLDpBb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712701908143-cvumdbmff438ovoann0ece5dgm0k9h3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
