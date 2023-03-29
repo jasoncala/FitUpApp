@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="8dp"
+    tools:context=".DiaryActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:padding="16dp"
+        tools:context=".HomeFragment"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-67dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvCalGoalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="KCAL GOAL"
+                app:layout_constraintStart_toStartOf="@+id/pbProteinProg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_header_breakfast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Breakfast"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBreakfast"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_header_breakfast"
+                tools:itemCount="3" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddBreakfast"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Add Food"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/holo_blue_light"
+                app:iconTint="@android:color/holo_blue_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvBreakfast" />
+
+            <TextView
+                android:id="@+id/tvCalorieGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3000"
+                android:textColor="@android:color/holo_green_light"
+                app:layout_constraintEnd_toEndOf="@+id/tvCalGoalTitle"
+                app:layout_constraintStart_toStartOf="@+id/tvCalGoalTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvCalGoalTitle"
+                tools:text="3000" />
+
+            <TextView
+                android:id="@+id/tvCalLeftTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="KCAL LEFT"
+                app:layout_constraintEnd_toEndOf="@+id/pbProteinProg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCalLeftVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1200"
+                android:textColor="@android:color/holo_green_light"
+                app:layout_constraintEnd_toEndOf="@+id/tvCalLeftTitle"
+                app:layout_constraintStart_toStartOf="@+id/tvCalLeftTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvCalLeftTitle"
+                tools:text="1200" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/pbCalorieLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:max="3000"
+                android:secondaryProgress="1800"
+                app:indicatorColor="@android:color/holo_green_light"
+                app:indicatorSize="172dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCalLeftVal"
+                app:trackColor="#E3E9ED"
+                tools:max="3000"
+                tools:progress="1800" />
+
+            <TextView
+                android:id="@+id/tv_cals_consumed_pb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1800"
+                android:textColor="@android:color/holo_green_light"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/pbCalorieLeft"
+                app:layout_constraintEnd_toEndOf="@+id/tvConsumedTitle"
+                app:layout_constraintStart_toStartOf="@+id/tvConsumedTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvConsumedTitle"
+                tools:text="1800" />
+
+            <TextView
+                android:id="@+id/tvConsumedTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONSUMED"
+                app:layout_constraintBottom_toTopOf="@+id/tv_cals_consumed_pb"
+                app:layout_constraintEnd_toEndOf="@+id/pbCalorieLeft"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/pbCalorieLeft"
+                app:layout_constraintTop_toBottomOf="@+id/pbCalorieLeft" />
+
+            <TextView
+                android:id="@+id/tvProteinTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="PROTEIN"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pbCalorieLeft" />
+
+            <TextView
+                android:id="@+id/tvCarbsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="CARBS"
+                app:layout_constraintStart_toStartOf="@+id/tvProteinTitle"
+                app:layout_constraintTop_toBottomOf="@+id/pbProteinProg" />
+
+            <TextView
+                android:id="@+id/tvFatsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="FAT"
+                app:layout_constraintStart_toStartOf="@+id/tvProteinTitle"
+                app:layout_constraintTop_toBottomOf="@+id/pbCarbsProg" />
+
+            <TextView
+                android:id="@+id/tvCarbsVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:text="120g"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintBottom_toBottomOf="@+id/tvCarbGoal"
+                app:layout_constraintEnd_toStartOf="@+id/tvCarbGoal"
+                tools:text="120g" />
+
+            <TextView
+                android:id="@+id/tvFatVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:text="81g"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintBottom_toBottomOf="@+id/tvFatGoal"
+                app:layout_constraintEnd_toStartOf="@+id/tvFatGoal"
+                tools:text="81g" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pbFatProg" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="377dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="8dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAddBreakfast" />
+
+            <TextView
+                android:id="@+id/tvCalorieGoalPb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3000"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_cals_consumed_pb"
+                app:layout_constraintStart_toStartOf="@+id/tv_cals_consumed_pb"
+                app:layout_constraintTop_toBottomOf="@+id/tv_cals_consumed_pb"
+                tools:text="/3000" />
+
+            <TextView
+                android:id="@+id/tvProteinVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:text="160g"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintBottom_toBottomOf="@+id/tvProteinGoal"
+                app:layout_constraintEnd_toStartOf="@+id/tvProteinGoal"
+                tools:text="160g" />
+
+            <TextView
+                android:id="@+id/tvProteinGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/160g"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/pbProteinProg"
+                app:layout_constraintEnd_toEndOf="@+id/pbProteinProg"
+                tools:text="/160g" />
+
+            <TextView
+                android:id="@+id/tvCarbGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/160g"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/pbCarbsProg"
+                app:layout_constraintEnd_toEndOf="@+id/pbCarbsProg"
+                tools:text="/160g" />
+
+            <TextView
+                android:id="@+id/tvFatGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/160g"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/pbFatProg"
+                app:layout_constraintEnd_toEndOf="@+id/pbFatProg"
+                tools:text="/160g" />
+
+            <ProgressBar
+                android:id="@+id/pbProteinProg"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:max="160"
+                android:progress="160"
+                android:progressTint="@android:color/holo_orange_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProteinTitle" />
+
+            <ProgressBar
+                android:id="@+id/pbCarbsProg"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:max="160"
+                android:progress="120"
+                android:progressTint="@android:color/holo_blue_light"
+                app:layout_constraintEnd_toEndOf="@+id/pbProteinProg"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/tvProteinTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvCarbsTitle" />
+
+            <ProgressBar
+                android:id="@+id/pbFatProg"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:max="160"
+                android:progress="81"
+                android:progressTint="@android:color/holo_purple"
+                app:layout_constraintEnd_toEndOf="@+id/pbProteinProg"
+                app:layout_constraintStart_toStartOf="@+id/tvFatsTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvFatsTitle" />
+
+            <TextView
+                android:id="@+id/tvBreakfastProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40g protein"
+                app:layout_constraintEnd_toStartOf="@+id/tvBreakfastCarbs"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_header_breakfast"
+                app:layout_constraintTop_toTopOf="@+id/tv_header_breakfast"
+                tools:text="40g protein" />
+
+            <TextView
+                android:id="@+id/tvBreakfastCarbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="80g carbs"
+                app:layout_constraintEnd_toStartOf="@+id/tvBreakfastFat"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvBreakfastProtein"
+                app:layout_constraintTop_toTopOf="@+id/tv_header_breakfast"
+                tools:text="80g carbs" />
+
+            <TextView
+                android:id="@+id/tvBreakfastFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60g fat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvBreakfastCarbs"
+                app:layout_constraintTop_toTopOf="@+id/tv_header_breakfast"
+                tools:text="60g fat" />
+
+            <TextView
+                android:id="@+id/tv_header_lunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Lunch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLunch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_header_lunch"
+                tools:itemCount="3" />
+
+            <TextView
+                android:id="@+id/tvLunchProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40g protein"
+                app:layout_constraintEnd_toStartOf="@+id/tvLunchCarbs"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_header_lunch"
+                app:layout_constraintTop_toTopOf="@+id/tv_header_lunch"
+                tools:text="40g protein" />
+
+            <TextView
+                android:id="@+id/tvLunchCarbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="80g carbs"
+                app:layout_constraintEnd_toStartOf="@+id/tvLunchFat"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvLunchProtein"
+                app:layout_constraintTop_toTopOf="@+id/tv_header_lunch"
+                tools:text="80g carbs" />
+
+            <TextView
+                android:id="@+id/tvLunchFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60g fat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvLunchCarbs"
+                app:layout_constraintTop_toTopOf="@+id/tv_header_lunch"
+                tools:text="60g fat" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddLunch"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Add Food"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/holo_blue_light"
+                app:iconTint="@android:color/holo_blue_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvLunch" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="377dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="8dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAddLunch" />
+
+            <TextView
+                android:id="@+id/tv_header_dinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Dinner"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider4"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_header_dinner"
+                tools:itemCount="3" />
+
+            <TextView
+                android:id="@+id/tvDinnerProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40g protein"
+                app:layout_constraintEnd_toStartOf="@+id/tvDinnerCarbs"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_header_dinner"
+                app:layout_constraintTop_toTopOf="@+id/tv_header_dinner"
+                tools:text="40g protein" />
+
+            <TextView
+                android:id="@+id/tvDinnerCarbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="80g carbs"
+                app:layout_constraintEnd_toStartOf="@+id/tvDinnerFat"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvDinnerProtein"
+                app:layout_constraintTop_toTopOf="@+id/tv_header_dinner"
+                tools:text="80g carbs" />
+
+            <TextView
+                android:id="@+id/tvDinnerFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60g fat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvDinnerCarbs"
+                app:layout_constraintTop_toTopOf="@+id/tv_header_dinner"
+                tools:text="60g fat" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddDinner"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Add Food"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/holo_blue_light"
+                app:iconTint="@android:color/holo_blue_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvDinner" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="377dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="8dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAddDinner" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,4 +20,6 @@
     <string name="app_fitup_tab_notif">Notifications</string>
     <string name="app_fitup_tab_profile">Profile</string>
     <string name="app_fitup_avatar_source">http://www.designs.com/</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
