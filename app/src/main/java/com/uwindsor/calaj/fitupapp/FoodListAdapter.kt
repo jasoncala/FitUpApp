@@ -1,6 +1,7 @@
 package com.uwindsor.calaj.fitupapp
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class FoodListAdapter(val context: Context, val foodItems: List<FoodItem>) :
     RecyclerView.Adapter<FoodListAdapter.ViewHolder>() {
-
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             return ViewHolder(
                 LayoutInflater.from(context).inflate(R.layout.item_food, parent, false)

@@ -1,13 +1,15 @@
 package com.uwindsor.calaj.fitupapp
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ArchivedFoodsAdapter (val context: Context, val archivedFoods: List<FoodItem>):
+class ArchivedFoodsAdapter (val context: Context, val archivedFoods: List<FoodItem>, private val clickListener: (FoodItem) -> Unit) :
     RecyclerView.Adapter<ArchivedFoodsAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -23,6 +25,10 @@ class ArchivedFoodsAdapter (val context: Context, val archivedFoods: List<FoodIt
             holder.tvFoodItemProtein.text = "${foodItem.protein}g Protein"
             holder.tvFoodItemCarbs.text = "${foodItem.carbs}g Carbs"
             holder.tvFoodItemFat.text = "${foodItem.fat}g Fat"
+            holder.itemView.setOnClickListener {
+                clickListener(foodItem)
+            }
+
             // possibly edit picture here
         }
 

@@ -12,6 +12,9 @@
         android:theme="@style/Theme.FitUpApp"
         tools:targetApi="31">
         <activity
+            android:name=".SearchFoodActivity"
+            android:exported="false" />
+        <activity
             android:name=".ArchivedFoodsActivity"
             android:exported="false" />
         <activity
