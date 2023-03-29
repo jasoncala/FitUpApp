@@ -112,6 +112,28 @@ class CreateFoodActivity : AppCompatActivity() {
         )
         if (userRef != null) {
             userRef.set(newVals, SetOptions.merge())
+            archiveFoodToDatabase(foodID, foodName, calories.toInt(), carbs.toInt(), fat.toInt(), protein.toInt())
+        }
+    }
+
+    private fun archiveFoodToDatabase(foodID: String, foodName: String, calories: Int, carbs: Int, fat: Int, protein: Int){
+        firestoreDb = FirebaseFirestore.getInstance()
+        val usersReference = firestoreDb.collection("archived-foods")
+        val userID = FirebaseAuth.getInstance().uid
+        val userRef = userID?.let { usersReference.document(it) }
+
+        val newVals = mutableMapOf<String, Any>(
+            foodID to mutableMapOf<String, Any>(
+                "foodName" to foodName,
+                "foodCals" to calories,
+                "foodCarbs" to carbs,
+                "foodFat" to fat,
+                "foodProtein" to protein
+            )
+        )
+
+        if (userRef != null) {
+            userRef.set(newVals, SetOptions.merge())
         }
     }
 
