@@ -38,7 +38,13 @@ class AddFoodActivity : AppCompatActivity() {
         }
 
         btnAddSavedFood.setOnClickListener {
-            //
+            val intent = Intent(this, ArchivedFoodsActivity::class.java)
+            intent.putExtra("meal", meal)
+            intent.putExtra("calExtra", calExtra)
+            intent.putExtra("carbExtra", carbExtra)
+            intent.putExtra("fatExtra", fatExtra)
+            intent.putExtra("proteinExtra", proteinExtra)
+            startActivity(intent)
         }
 
         btnSearchFood.setOnClickListener {
