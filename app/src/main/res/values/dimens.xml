@@ -23,4 +23,5 @@
     <dimen name="app_fitup_tab_indicator_height">4dp</dimen>
 
     <dimen name="app_fitup_recycler_item_size">192dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

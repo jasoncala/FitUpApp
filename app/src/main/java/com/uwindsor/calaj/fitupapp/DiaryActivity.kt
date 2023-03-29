@@ -1,12 +1,22 @@
 package com.uwindsor.calaj.fitupapp
 
+import android.app.AlertDialog
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ProgressBar
-import android.widget.TextView
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+
+private const val TAG = "DiaryActivity"
 
 class DiaryActivity : AppCompatActivity() {
     private lateinit var tvCalorieGoal: TextView
@@ -35,7 +45,7 @@ class DiaryActivity : AppCompatActivity() {
     private lateinit var btnAddLunch: Button
     private lateinit var btnAddDinner: Button
 
-
+    private lateinit var firestoreDb: FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diary)
@@ -112,6 +122,15 @@ class DiaryActivity : AppCompatActivity() {
         }
 
         // Getting data - TODO connect with database
+        val userID = FirebaseAuth.getInstance().uid
+        val usersReference = firestoreDb.collection("users")
+        // val userDocument = userID?.let { Firebase.firestore.collection("users").document(it)}
+        val userInfo = userID?.let { usersReference.document(it) }
+
+        setupDiaryView(userInfo)
+
+
+
         val calorieGoal = 3000
         val calorieConsumed = 1800
         val proteinGoal = 160
@@ -145,4 +164,37 @@ class DiaryActivity : AppCompatActivity() {
         tvBreakfastFat.text = "${fatConsumed}g Fat"
 
     }
+
+    private fun setupDiaryView(userInfo: DocumentReference?) {
+        userInfo?.get()?.addOnSuccessListener { document ->
+            if (document != null) {
+                val data = document.data
+                // Setting up data
+
+            }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_goprofile){
+            //val intent = Intent(this, ProfileActivity::class.java)
+            //startActivity(intent)
+        }
+        if (item.itemId == R.id.menu_logout){
+            // Log out of Firebase
+            FirebaseAuth.getInstance().signOut()
+            // Close activity
+            finish()
+            // Go back to login screen
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
