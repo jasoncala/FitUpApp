@@ -69,7 +69,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun goStartProfileActivity(){
-        val intent = Intent(this, DiaryActivity::class.java)
+        val intent = Intent(this, StartProfileActivity::class.java)
         startActivity(intent)
         finish()
     }
