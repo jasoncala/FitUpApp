@@ -146,6 +146,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/pbCalorieLeft" />
 
             <TextView
+                android:id="@+id/tvProteinPercentTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:text="50%"
+                android:visibility = "invisible"
+                app:layout_constraintStart_toEndOf="@+id/tvProteinTitle"
+                app:layout_constraintBottom_toBottomOf="@+id/tvProteinTitle" />
+
+            <TextView
                 android:id="@+id/tvCarbsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -155,6 +166,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/pbProteinProg" />
 
             <TextView
+                android:id="@+id/tvCarbsPercentTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:text="30%"
+                android:visibility = "invisible"
+                app:layout_constraintStart_toEndOf="@+id/tvCarbsTitle"
+                app:layout_constraintBottom_toBottomOf="@+id/tvCarbsTitle" />
+
+            <TextView
                 android:id="@+id/tvFatsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -162,6 +184,17 @@
                 android:text="FAT"
                 app:layout_constraintStart_toStartOf="@+id/tvProteinTitle"
                 app:layout_constraintTop_toBottomOf="@+id/pbCarbsProg" />
+
+            <TextView
+                android:id="@+id/tvFatsPercentTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:text="20%"
+                android:visibility = "invisible"
+                app:layout_constraintStart_toEndOf="@+id/tvFatsTitle"
+                app:layout_constraintBottom_toBottomOf="@+id/tvFatsTitle" />
 
             <TextView
                 android:id="@+id/tvCarbsVal"

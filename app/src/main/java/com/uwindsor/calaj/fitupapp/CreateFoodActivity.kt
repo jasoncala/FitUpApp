@@ -81,6 +81,10 @@ class CreateFoodActivity : AppCompatActivity() {
         val carbExtra = intent.getIntExtra("carbExtra", 0)
         val fatExtra = intent.getIntExtra("fatExtra", 0)
         val proteinExtra = intent.getIntExtra("proteinExtra", 0)
+        val calorieGoal = intent.getIntExtra("calorieGoal", 0)
+        val percentCarbs = intent.getIntExtra("percentCarbs", 0)
+        val percentFat = intent.getIntExtra("percentFat", 0)
+        val percentProtein = intent.getIntExtra("percentProtein", 0)
         Log.d("TESTER", "allMacros: ${calExtra}, ${carbExtra}, ${fatExtra}, ${proteinExtra}")
 
         val newCals = calExtra + calories.toInt()
@@ -102,10 +106,14 @@ class CreateFoodActivity : AppCompatActivity() {
                             "foodProtein" to protein.toLong()
                         )
                     ),
+                    "calorieGoal" to calorieGoal,
                     "calorieConsumed" to newCals,
                     "carbsConsumed" to newCarbs,
                     "fatConsumed" to newFat,
-                    "proteinConsumed" to newProtein
+                    "proteinConsumed" to newProtein,
+                    "percentCarbs" to percentCarbs,
+                    "percentFat" to percentFat,
+                    "percentProtein" to percentProtein
                 )
             )
 

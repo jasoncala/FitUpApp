@@ -26,6 +26,11 @@ class AddFoodActivity : AppCompatActivity() {
         val carbExtra = intent.getIntExtra("carbExtra", 0)
         val fatExtra = intent.getIntExtra("fatExtra", 0)
         val proteinExtra = intent.getIntExtra("proteinExtra", 0)
+        val calorieGoal = intent.getIntExtra("calorieGoal", 0)
+        val percentCarbs = intent.getIntExtra("percentCarbs", 0)
+        val percentFat = intent.getIntExtra("percentFat", 0)
+        val percentProtein = intent.getIntExtra("percentProtein", 0)
+
 
         btnCreateNewFood.setOnClickListener {
             val intent = Intent(this, CreateFoodActivity::class.java)
@@ -34,6 +39,11 @@ class AddFoodActivity : AppCompatActivity() {
             intent.putExtra("carbExtra", carbExtra)
             intent.putExtra("fatExtra", fatExtra)
             intent.putExtra("proteinExtra", proteinExtra)
+            intent.putExtra("calorieGoal", calorieGoal)
+            intent.putExtra("percentCarbs", percentCarbs)
+            intent.putExtra("percentFat", percentFat)
+            intent.putExtra("percentProtein", percentProtein)
+
             startActivity(intent)
         }
 
@@ -44,11 +54,27 @@ class AddFoodActivity : AppCompatActivity() {
             intent.putExtra("carbExtra", carbExtra)
             intent.putExtra("fatExtra", fatExtra)
             intent.putExtra("proteinExtra", proteinExtra)
+            intent.putExtra("calorieGoal", calorieGoal)
+            intent.putExtra("percentCarbs", percentCarbs)
+            intent.putExtra("percentFat", percentFat)
+            intent.putExtra("percentProtein", percentProtein)
+
             startActivity(intent)
         }
 
         btnSearchFood.setOnClickListener {
-            //
+            val intent = Intent(this, SearchFoodActivity::class.java)
+            intent.putExtra("meal", meal)
+            intent.putExtra("calExtra", calExtra)
+            intent.putExtra("carbExtra", carbExtra)
+            intent.putExtra("fatExtra", fatExtra)
+            intent.putExtra("proteinExtra", proteinExtra)
+            intent.putExtra("calorieGoal", calorieGoal)
+            intent.putExtra("percentCarbs", percentCarbs)
+            intent.putExtra("percentFat", percentFat)
+            intent.putExtra("percentProtein", percentProtein)
+
+            startActivity(intent)
         }
 
         btnBackToDiary.setOnClickListener {

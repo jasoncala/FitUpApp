@@ -32,6 +32,9 @@ class DiaryActivity : AppCompatActivity() {
     private lateinit var tvCarbsVal: TextView
     private lateinit var tvFatVal: TextView
     private lateinit var tvProteinVal: TextView
+    private lateinit var tvCarbPercent: TextView
+    private lateinit var tvFatPercent: TextView
+    private lateinit var tvProteinPercent: TextView
     private lateinit var tvCarbGoal: TextView
     private lateinit var tvFatGoal: TextView
     private lateinit var tvProteinGoal: TextView
@@ -73,6 +76,9 @@ class DiaryActivity : AppCompatActivity() {
         tvCarbsVal = findViewById(R.id.tvCarbsVal)
         tvFatVal = findViewById(R.id.tvFatVal)
         tvProteinVal = findViewById(R.id.tvProteinVal)
+        tvCarbPercent = findViewById(R.id.tvCarbsPercentTitle)
+        tvFatPercent = findViewById(R.id.tvFatsPercentTitle)
+        tvProteinPercent = findViewById(R.id.tvProteinPercentTitle)
         tvCarbGoal = findViewById(R.id.tvCarbGoal)
         tvFatGoal = findViewById(R.id.tvFatGoal)
         tvProteinGoal = findViewById(R.id.tvProteinGoal)
@@ -102,43 +108,88 @@ class DiaryActivity : AppCompatActivity() {
         // Set up button listeners
         btnAddBreakfast.setOnClickListener{
             val intent = Intent(this, AddFoodActivity::class.java)
-            intent.putExtra("meal", "breakfast")
             val CaloriesExtra = tv_cals_consumed_pb.text.toString().toInt()
             val CarbsExtra = (tvCarbsVal.text.toString().split("g")[0]).toInt()
             val FatExtra = (tvFatVal.text.toString().split("g")[0]).toInt()
             val ProteinExtra = (tvProteinVal.text.toString().split("g")[0]).toInt()
+            val CalorieGoalExtra = tvCalorieGoal.text.toString().toInt()
+            val PercentCarbsExtra = (tvCarbPercent.text.toString().split("%")[0]).toInt()
+            val PercentFatExtra = (tvFatPercent.text.toString().split("%")[0]).toInt()
+            val PercentProteinExtra = (tvProteinPercent.text.toString().split("%")[0]).toInt()
+            val BreakfastProteinExtra = (tvBreakfastProtein.text.toString().split("g")[0]).toInt()
+            val BreakfastCarbsExtra = (tvBreakfastCarbs.text.toString().split("g")[0]).toInt()
+            val BreakfastFatExtra = (tvBreakfastFat.text.toString().split("g")[0]).toInt()
+
+            intent.putExtra("meal", "breakfast")
             intent.putExtra("calExtra", CaloriesExtra)
             intent.putExtra("carbExtra", CarbsExtra)
             intent.putExtra("fatExtra", FatExtra)
             intent.putExtra("proteinExtra", ProteinExtra)
+            intent.putExtra("calorieGoal", CalorieGoalExtra)
+            intent.putExtra("percentCarbs", PercentCarbsExtra)
+            intent.putExtra("percentFat", PercentFatExtra)
+            intent.putExtra("percentProtein", PercentProteinExtra)
+            intent.putExtra("breakfastProtein", BreakfastProteinExtra)
+            intent.putExtra("breakfastCarbs", BreakfastCarbsExtra)
+            intent.putExtra("breakfastFat", BreakfastFatExtra)
             startActivity(intent)
         }
 
         btnAddLunch.setOnClickListener{
             val intent = Intent(this, AddFoodActivity::class.java)
-            intent.putExtra("meal", "lunch")
             val CaloriesExtra = tv_cals_consumed_pb.text.toString().toInt()
             val CarbsExtra = (tvCarbsVal.text.toString().split("g")[0]).toInt()
             val FatExtra = (tvFatVal.text.toString().split("g")[0]).toInt()
             val ProteinExtra = (tvProteinVal.text.toString().split("g")[0]).toInt()
+            val CalorieGoalExtra = tvCalorieGoal.text.toString().toInt()
+            val PercentCarbsExtra = (tvCarbPercent.text.toString().split("%")[0]).toInt()
+            val PercentFatExtra = (tvFatPercent.text.toString().split("%")[0]).toInt()
+            val PercentProteinExtra = (tvProteinPercent.text.toString().split("%")[0]).toInt()
+            val LunchProteinExtra = (tvLunchProtein.text.toString().split("g")[0]).toInt()
+            val LunchCarbsExtra = (tvLunchCarbs.text.toString().split("g")[0]).toInt()
+            val LunchFatExtra = (tvLunchFat.text.toString().split("g")[0]).toInt()
+
+            intent.putExtra("meal", "lunch")
             intent.putExtra("calExtra", CaloriesExtra)
             intent.putExtra("carbExtra", CarbsExtra)
             intent.putExtra("fatExtra", FatExtra)
             intent.putExtra("proteinExtra", ProteinExtra)
+            intent.putExtra("calorieGoal", CalorieGoalExtra)
+            intent.putExtra("percentCarbs", PercentCarbsExtra)
+            intent.putExtra("percentFat", PercentFatExtra)
+            intent.putExtra("percentProtein", PercentProteinExtra)
+            intent.putExtra("lunchProtein", LunchProteinExtra)
+            intent.putExtra("lunchCarbs", LunchCarbsExtra)
+            intent.putExtra("lunchFat", LunchFatExtra)
             startActivity(intent)
         }
 
         btnAddDinner.setOnClickListener{
             val intent = Intent(this, AddFoodActivity::class.java)
-            intent.putExtra("meal", "dinner")
             val CaloriesExtra = tv_cals_consumed_pb.text.toString().toInt()
             val CarbsExtra = (tvCarbsVal.text.toString().split("g")[0]).toInt()
             val FatExtra = (tvFatVal.text.toString().split("g")[0]).toInt()
             val ProteinExtra = (tvProteinVal.text.toString().split("g")[0]).toInt()
+            val CalorieGoalExtra = tvCalorieGoal.text.toString().toInt()
+            val PercentCarbsExtra = (tvCarbPercent.text.toString().split("%")[0]).toInt()
+            val PercentFatExtra = (tvFatPercent.text.toString().split("%")[0]).toInt()
+            val PercentProteinExtra = (tvProteinPercent.text.toString().split("%")[0]).toInt()
+            val DinnerProteinExtra = (tvDinnerProtein.text.toString().split("g")[0]).toInt()
+            val DinnerCarbsExtra = (tvDinnerCarbs.text.toString().split("g")[0]).toInt()
+            val DinnerFatExtra = (tvDinnerFat.text.toString().split("g")[0]).toInt()
+
+            intent.putExtra("meal", "dinner")
             intent.putExtra("calExtra", CaloriesExtra)
             intent.putExtra("carbExtra", CarbsExtra)
             intent.putExtra("fatExtra", FatExtra)
             intent.putExtra("proteinExtra", ProteinExtra)
+            intent.putExtra("calorieGoal", CalorieGoalExtra)
+            intent.putExtra("percentCarbs", PercentCarbsExtra)
+            intent.putExtra("percentFat", PercentFatExtra)
+            intent.putExtra("percentProtein", PercentProteinExtra)
+            intent.putExtra("dinnerProtein", DinnerProteinExtra)
+            intent.putExtra("dinnerCarbs", DinnerCarbsExtra)
+            intent.putExtra("dinnerFat", DinnerFatExtra)
             startActivity(intent)
         }
 
@@ -185,9 +236,21 @@ class DiaryActivity : AppCompatActivity() {
                     tvCarbsVal.text = "0g"
                     tvFatVal.text = "0g"
                     tvProteinVal.text = "0g"
+                    tvCarbPercent.text = "${curPercentCarbs.toInt()}%"
+                    tvFatPercent.text = "${curPercentFat.toInt()}%"
+                    tvProteinPercent.text = "${curPercentProtein.toInt()}%"
                     tvCarbGoal.text = "/${curCarbsGoal}g"
                     tvFatGoal.text = "/${curFatGoal}g"
                     tvProteinGoal.text = "/${curProteinGoal}g"
+                    tvBreakfastCarbs.text = "0g Carbs"
+                    tvBreakfastFat.text = "0g Fat"
+                    tvBreakfastProtein.text = "0g Protein"
+                    tvLunchCarbs.text = "0g Carbs"
+                    tvLunchFat.text = "0g Fat"
+                    tvLunchProtein.text = "0g Protein"
+                    tvDinnerCarbs.text = "0g Carbs"
+                    tvDinnerFat.text = "0g Fat"
+                    tvDinnerProtein.text = "0g Protein"
                     pbProteinProg.max = curProteinGoal
                     pbProteinProg.progress = 0
                     pbCarbsProg.max = curCarbsGoal
@@ -228,6 +291,9 @@ class DiaryActivity : AppCompatActivity() {
                         tvCarbsVal.text = "${carbsConsumed}g"
                         tvFatVal.text = "${fatConsumed}g"
                         tvProteinVal.text = "${proteinConsumed}g"
+                        tvCarbPercent.text = "${percentCarbs.toInt()}%"
+                        tvFatPercent.text = "${percentFat.toInt()}%"
+                        tvProteinPercent.text = "${percentProtein.toInt()}%"
                         tvCarbGoal.text = "/${carbsGoal}g"
                         tvFatGoal.text = "/${fatGoal}g"
                         tvProteinGoal.text = "/${proteinGoal}g"

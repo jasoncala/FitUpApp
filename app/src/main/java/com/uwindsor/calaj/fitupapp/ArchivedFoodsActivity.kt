@@ -91,6 +91,10 @@ class ArchivedFoodsActivity : AppCompatActivity() {
         val fatExtra = intent.getIntExtra("fatExtra", 0)
         val proteinExtra = intent.getIntExtra("proteinExtra", 0)
         val meal = intent.getStringExtra("meal")
+        val calorieGoal = intent.getIntExtra("calorieGoal", 0)
+        val percentCarbs = intent.getIntExtra("percentCarbs", 0)
+        val percentFat = intent.getIntExtra("percentFat", 0)
+        val percentProtein = intent.getIntExtra("percentProtein", 0)
 
         val newCals = calExtra + foodItem.calories
         val newCarbs = carbExtra + foodItem.carbs
@@ -112,10 +116,14 @@ class ArchivedFoodsActivity : AppCompatActivity() {
                                 "foodProtein" to foodItem.protein,
                             )
                         ),
+                        "calorieGoal" to calorieGoal,
                         "calorieConsumed" to newCals,
                         "carbsConsumed" to newCarbs,
                         "fatConsumed" to newFat,
-                        "proteinConsumed" to newProtein
+                        "proteinConsumed" to newProtein,
+                        "percentCarbs" to percentCarbs,
+                        "percentFat" to percentFat,
+                        "percentProtein" to percentProtein
                     )
                 )
             )

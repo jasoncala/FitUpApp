@@ -24,7 +24,7 @@
         android:id="@+id/btnSearchFood"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:text="Search Foods" />
+        android:text="Search Meals" />
 
     <Button
         android:id="@+id/btnBackToDiary"
