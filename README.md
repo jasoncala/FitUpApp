@@ -2,17 +2,17 @@
 
 ## *Jason Cala*
 
-**FitUp** is a Kotlin Android calorie and health tracker app. I do not use any graphics or figma designs used.
+**FitUp** is a Kotlin Android calorie and health tracker app. 
 
 ## Functionality
 
 This app has the following functionalities:
 
-* [ ] Authentication via google login or user/password
-* [ ] Firestore database keeping track of all user stats
-* [ ] Daily calorie counter screen paired with food options from a recipe/food API
-* [ ] Water drinking counter
-* [ ] Think of more functionalities
+* [X] Authentication via google login or user/password
+* [X] Firestore database keeping track of all user stats
+* [X] Daily calorie counter screen paired with food options from a recipe/food API
+* [X] Water drinking counter
+* [X] Think of more functionalities
 
 ## Video Walkthrough
 
